@@ -1,0 +1,30 @@
+apiVersion: skaffold/v2beta3
+kind: Config
+build:
+  artifacts:
+    # - image: webapp-front
+    #   context: ./client/
+    - image: webapp-api
+      context: ./server/
+      docker:
+        dockerfile: Dockerfile
+        buildArgs:
+          GOLANG_VER: 1.14.2
+          ALPINE_VER: 3.11
+deploy:
+  kubectl:
+    manifests:
+      # - ./client/k8s/*
+      - ./server/k8s/*
+profiles:
+- name: local
+  build:
+    local:
+      push: false
+  deploy:
+    kubeContext: minikube
+# portForward:
+#   - resourceType: deployment
+#     resourceName: webapp-api
+#     port: 8080
+#     localPort: 9000
