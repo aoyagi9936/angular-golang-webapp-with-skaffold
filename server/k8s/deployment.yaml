@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webapp-api
+  labels:
+    app: webapp-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: webapp-api
+  template:
+    metadata:
+      labels:
+        app: webapp-api
+    spec:
+      containers:
+        - name: webapp-api
+          image: webapp-api
+          ports:
+            - containerPort: 8080
