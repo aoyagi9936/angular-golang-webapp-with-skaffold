@@ -1,0 +1,52 @@
+version: '3'
+
+services:
+
+  # Dockerイメージの作成
+  base:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        NODE_VERSION: ${NODE_VERSION}
+        ANGULAR_VERSION: ${ANGULAR_VERSION}
+    image: "angular9-app"
+    container_name: "angular9-app"
+    
+  # create application
+  app-create:
+    image: "angular9-app"
+    volumes:
+      - "${ANGULAR_APP_PATH}:/app"
+    command: bash -c "ng new ${ANGULAR_APP_NAME} --style=scss --directory ./"
+    depends_on:
+      - base
+    
+  # init node_modules
+  app-init:
+    image: "angular9-app"
+    volumes:
+      - "${ANGULAR_APP_PATH}:/app"
+    command: bash -c "npm cache clean --force && npm install"
+    depends_on:
+      - base
+
+  # ng serve
+  ng-serve:
+    image: "angular9-app"
+    ports:
+      - "4200:4200"
+    volumes:
+      - "${ANGULAR_APP_PATH}:/app"
+    command: bash -c "npm rebuild node-sass && ng serve --host 0.0.0.0"
+    depends_on:
+      - base
+
+  # ng build
+  ng-build:
+    image: "angular9-app"
+    volumes:
+      - "${ANGULAR_APP_PATH}:/app"
+    command: bash -c "ng build --prod --output-path dist"
+    depends_on:
+      - base
