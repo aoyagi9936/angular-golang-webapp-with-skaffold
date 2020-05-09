@@ -1,7 +1,8 @@
 ARG NODE_VERSION
-ARG ANGULAR_VERSION
 
 FROM node:${NODE_VERSION}
+
+ARG ANGULAR_VERSION
 
 # install angular-cli
 RUN chown -R node:node /usr/local/lib/node_modules \
