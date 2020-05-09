@@ -1,0 +1,60 @@
+version: '3'
+services:
+
+  # Dockerイメージの作成
+  base:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        NODE_VERSION: ${NODE_VERSION}
+    image: "swagger-cli"
+    container_name: "swagger-cli"
+
+  api-gen-init:
+    image: "swagger-cli"
+    volumes:
+      - "${MOUNT_PATH}:/local"
+    command: >
+      bundle
+      /local/${DEFINE_API_PATH}
+      --o /local/${BUILD_API_PATH}
+      --t yaml
+    depends_on:
+      - base
+      
+  api-gen-validate:
+    image: "swagger-cli"
+    volumes:
+      - "${MOUNT_PATH}:/local"
+    command: >
+      validate
+      /local/${DEFINE_API_PATH}
+    depends_on:
+      - base
+      
+  api-gen-list:
+    image: "openapitools/openapi-generator-cli:${OPENAPI_GEN_VER}"
+    command: list
+
+  api-gen-angular:
+    image: "openapitools/openapi-generator-cli:${OPENAPI_GEN_VER}"
+    volumes:
+      - "${MOUNT_PATH}:/local"
+    command: >
+      generate
+      -i /local/${BUILD_API_PATH}
+      -g typescript-angular
+      -o /local/${CLIENT_OUTPUT_PATH}
+    depends_on:
+      - base
+      
+  api-gen-gogin:
+    image: "openapitools/openapi-generator-cli:${OPENAPI_GEN_VER}"
+    volumes:
+      - "${MOUNT_PATH}:/local"
+    command: >
+      generate
+      -i /local/${BUILD_API_PATH}
+      -g go-gin-server
+      -o /local/${SERVER_OUTPUT_PATH}
