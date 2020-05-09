@@ -2,8 +2,12 @@ apiVersion: skaffold/v2beta3
 kind: Config
 build:
   artifacts:
-    # - image: webapp-front
-    #   context: ./client/
+    - image: webapp-front
+      context: ./client/
+      sync:
+        manual:
+          - src: 'src/dist/*'
+            dest: /usr/share/nginx/html
     - image: webapp-api
       context: ./server/
       docker:
@@ -14,7 +18,7 @@ build:
 deploy:
   kubectl:
     manifests:
-      # - ./client/k8s/*
+      - ./client/k8s/*
       - ./server/k8s/*
 profiles:
 - name: local
