@@ -1,0 +1,13 @@
+openapi: "3.0.0"
+info:
+  version: 1.0.0
+  title: Webapp Example
+  license:
+    name: MIT
+servers:
+  - url: http://webapp-example.test/api/v1
+paths:
+  $ref: "./paths/_index.yaml"
+components:
+  schemas:
+    $ref: "./schemas/_index.yaml"

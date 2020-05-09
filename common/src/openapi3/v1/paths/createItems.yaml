@@ -1,0 +1,13 @@
+summary: Create a item
+operationId: createItems
+tags:
+  - items
+responses:
+  '201':
+    description: Null response
+  default:
+    description: unexpected error
+    content:
+      application/json:
+        schema:
+          $ref: '../schemas/Error.yaml'

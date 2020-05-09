@@ -1,0 +1,6 @@
+Item:
+  $ref: "./Item.yaml"
+Items:
+  $ref: "./Items.yaml"
+Error:
+  $ref: "./Error.yaml"

@@ -1,0 +1,8 @@
+/items:
+  get:
+    $ref: "./listItems.yaml"
+  post:
+    $ref: "./createItems.yaml"
+/items/{itemId}:
+  get:
+    $ref: "./showItemById.yaml"

@@ -1,0 +1,24 @@
+summary: Info for a specific item
+operationId: showItemById
+tags:
+  - items
+parameters:
+  - name: itemId
+    in: path
+    required: true
+    description: The id of the item to retrieve
+    schema:
+      type: string
+responses:
+  '200':
+    description: Expected response to a valid request
+    content:
+      application/json:
+        schema:
+          $ref: '../schemas/Item.yaml'
+  default:
+    description: unexpected error
+    content:
+      application/json:
+        schema:
+          $ref: '../schemas/Error.yaml'
