@@ -47,6 +47,6 @@ services:
     image: "angular9-app"
     volumes:
       - "${ANGULAR_APP_PATH}:/app"
-    command: bash -c "ng build --prod --output-path dist"
+    command: bash -c "ng build --prod --output-path dist --deploy-url=./"
     depends_on:
       - base
