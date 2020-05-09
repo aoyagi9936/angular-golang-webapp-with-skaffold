@@ -4,7 +4,7 @@ metadata:
   name: webapp-api
 spec:
   type: LoadBalancer
-  clusterIP: 10.96.100.1
+  clusterIP: 10.96.100.20
   selector:
     app: webapp-api
   ports:
