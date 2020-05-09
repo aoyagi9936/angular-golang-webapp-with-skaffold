@@ -13,7 +13,7 @@ spec:
         backend:
           serviceName: webapp-front-service
           servicePort: 9001
-      - path: /api/?(.*)
-        backend:
-          serviceName: webapp-api-service
-          servicePort: 9002
+      # - path: /api/?(.*)
+      #   backend:
+      #     serviceName: webapp-api-service
+      #     servicePort: 9002

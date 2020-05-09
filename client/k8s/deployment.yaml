@@ -4,18 +4,25 @@ metadata:
   name: webapp-front-deployment
   labels:
     app: webapp-front
+    tier: frontend
 spec:
   replicas: 1
   selector:
     matchLabels:
       app: webapp-front
+      tier: frontend
   template:
     metadata:
       labels:
         app: webapp-front
+        tier: frontend
     spec:
       containers:
         - name: webapp-front
           image: webapp-front
+          lifecycle:
+            preStop:
+              exec:
+                command: ["/usr/sbin/nginx","-s","quit"]
           ports:
             - containerPort: 80

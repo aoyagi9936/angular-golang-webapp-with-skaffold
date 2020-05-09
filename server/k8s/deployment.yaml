@@ -4,15 +4,18 @@ metadata:
   name: webapp-api-deployment
   labels:
     app: webapp-api
+    tier: backend
 spec:
   replicas: 1
   selector:
     matchLabels:
       app: webapp-api
+      tier: backend
   template:
     metadata:
       labels:
         app: webapp-api
+        tier: backend
     spec:
       containers:
         - name: webapp-api

@@ -8,6 +8,8 @@ build:
         dockerfile: Dockerfile
         buildArgs:
           NGINX_VER: 1.17.10-alpine
+          BASIC_USER: webapp-demo
+          BASIC_PASS: webapp-demo
       sync:
         manual:
           - src: 'src/dist/*'
