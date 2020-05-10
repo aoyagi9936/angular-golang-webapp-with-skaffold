@@ -10,3 +10,5 @@ services:
       ${BUILD_POSTMAN_PATH}
       --reporters cli,json
       --reporter-json-export ${NEWMAN_REPORT_PATH}
+    extra_hosts:
+      - webapp-example.test:192.168.64.3

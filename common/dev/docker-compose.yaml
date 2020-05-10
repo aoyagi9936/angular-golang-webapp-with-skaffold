@@ -63,6 +63,7 @@ services:
       - "${MOUNT_PATH}:/local"
     command: >
       generate
+      -Dmodels
       -i /local/${BUILD_API_PATH}
       -g go-gin-server
       -o /local/${SERVER_OUTPUT_PATH}
