@@ -3,7 +3,7 @@
 ## Setup
 Install Skaffold and Minikube
 
-n*Linux*
+*Linux*
 ``` shell
 $ curl -Lo skaffold https://storage.googleapis.com/skaffold/releases/latest/skaffold-linux-amd64
 sudo install skaffold /usr/local/bin/
@@ -47,16 +47,23 @@ https://github.com/GoogleContainerTools/skaffold/issues/3109
 
 ``` shell
 $ cd client/dev
-$ docker-compose app-init # setup node_modules
-$ docker-compose ng-serve
+$ docker-compose up app-init # setup node_modules
+$ docker-compose up ng-serve
 ```
 
 Access to `localhost:4200` with a brawser.
+
+Start mock server [Prism](https://stoplight.io/open-source/prism/) .
+``` shell
+$ docker-compose up api-mock
+```
+
 Deploy is below.
+
 (Skaffold detect the angular output-path)
 
 ``` shell
-$ docker-compose ng-build
+$ docker-compose up ng-build
 ```
 
 ## Development Golang
