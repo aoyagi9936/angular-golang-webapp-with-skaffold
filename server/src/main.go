@@ -104,18 +104,18 @@ func NewRouter() *gin.Engine {
     return router
 }
 
-// // Index is the index handler.
-// func Index(c *gin.Context) {
-//     c.String(http.StatusOK, "Hello World!")
-// }
+// PingPong is the test handler.
+func PingPong(c *gin.Context) {
+    c.String(http.StatusOK, "pong")
+}
 
 var routes = Routes{
-    // {
-    //     "Index",
-    //     http.MethodGet,
-    //     "/api/v1/",
-    //     Index,
-    // },
+    {
+        "Index",
+        http.MethodGet,
+        "/ping",
+        PingPong,
+    },
 
     {
         "CreateItems",
