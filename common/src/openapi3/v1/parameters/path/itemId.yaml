@@ -1,0 +1,6 @@
+name: itemId
+in: path
+required: true
+description: The id of the item to retrieve
+schema:
+  type: string
