@@ -43,6 +43,49 @@ Reason of add `--trigger polling` option.
 >there are differences in case (created folder case vs. current directory), no file watcher events are triggered.
 https://github.com/GoogleContainerTools/skaffold/issues/3109
 
+## OpenAPI (OAS)
+
+Modify `common/src/openapi3/<version>/*` 
+
+This Command generate `openapi.yaml` `postman.json` under the `common/src/openapi3/build/`
+
+``` shell
+$ cd common/dev
+$ docker-compose up api-gen-test
+$ docker-compose up api-gen-init
+$ docker-compose up api-gen-postman
+```
+
+For client:
+``` shell
+$ docker-compose up api-gen-angular
+```
+
+For server:
+``` shell
+$ docker-compose up api-gen-gogin
+```
+*server is output model only.*
+
+If you want to version up api:
+
+1. create next version directory.
+``` shell
+$ cd common/src/openapi3/
+$ cp -R v1 v2
+```
+
+2. Edit `common/src/openapi/v2/openapi.yaml`
+``` ini
+servers:
+  - url: http://webapp-example.test/api/v2
+```
+
+3. Edit `common/dev/.env`
+``` ini
+DEFINE_API_PATH=common/src/openapi3/v2/openapi.yaml
+```
+
 ## Development Angular
 
 ``` shell
