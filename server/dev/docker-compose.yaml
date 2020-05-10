@@ -1,0 +1,12 @@
+version: '3'
+services:
+      
+  newman-test:
+    image: "postman/newman:${NEWMAN_VER}"
+    volumes:
+      - "${MOUNT_PATH}:/etc/newman"
+    command: >
+      run 
+      ${BUILD_POSTMAN_PATH}
+      --reporters cli,json
+      --reporter-json-export ${NEWMAN_REPORT_PATH}

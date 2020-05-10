@@ -1,7 +1,6 @@
 version: '3'
 services:
 
-  # Dockerイメージの作成
   base:
     build:
       context: .
@@ -23,7 +22,7 @@ services:
     depends_on:
       - base
       
-  api-gen-validate:
+  api-gen-test:
     image: "swagger-cli"
     volumes:
       - "${MOUNT_PATH}:/local"
@@ -32,6 +31,15 @@ services:
       /local/${DEFINE_API_PATH}
     depends_on:
       - base
+
+  api-gen-postman:
+    image: "node:${NODE_VERSION}"
+    volumes:
+      - "${MOUNT_PATH}:/tmp"
+    command: >
+      npx openapi-to-postmanv2
+      -s /tmp/${BUILD_API_PATH}
+      -o /tmp/${BUILD_POSTMAN_PATH} -p
       
   api-gen-list:
     image: "openapitools/openapi-generator-cli:${OPENAPI_GEN_VER}"

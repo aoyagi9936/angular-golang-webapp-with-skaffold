@@ -1,0 +1,318 @@
+{
+    "item": [
+        {
+            "id": "c8708f0a-3d0e-43bb-82e0-7a77744bdabb",
+            "name": "items",
+            "item": [
+                {
+                    "id": "18fcb45d-8d90-4678-b041-80571d96e49f",
+                    "name": "List all items",
+                    "request": {
+                        "name": "List all items",
+                        "description": {},
+                        "url": {
+                            "path": [
+                                "items"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [
+                                {
+                                    "description": "How many items to return at one time (max 100)",
+                                    "key": "limit",
+                                    "value": "<integer>"
+                                }
+                            ],
+                            "variable": []
+                        },
+                        "method": "GET",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "id": "4b04a776-f6d9-48c0-8cae-1cbcb4cd708b",
+                            "name": "A paged array of items",
+                            "originalRequest": {
+                                "url": {
+                                    "path": [
+                                        "items"
+                                    ],
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "query": [
+                                        {
+                                            "key": "limit",
+                                            "value": "<integer>"
+                                        }
+                                    ],
+                                    "variable": []
+                                },
+                                "method": "GET",
+                                "body": {}
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "header": [
+                                {
+                                    "key": "x-next",
+                                    "value": "<string>",
+                                    "description": "A link to the next page of responses"
+                                },
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "body": "[\n {\n  \"id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"tag\": \"<string>\"\n },\n {\n  \"id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"tag\": \"<string>\"\n }\n]",
+                            "cookie": [],
+                            "_postman_previewlanguage": "json"
+                        },
+                        {
+                            "id": "533b6cc1-0fef-495e-8ffb-20a0c420619b",
+                            "name": "unexpected error",
+                            "originalRequest": {
+                                "url": {
+                                    "path": [
+                                        "items"
+                                    ],
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "query": [
+                                        {
+                                            "key": "limit",
+                                            "value": "<integer>"
+                                        }
+                                    ],
+                                    "variable": []
+                                },
+                                "method": "GET",
+                                "body": {}
+                            },
+                            "status": "Internal Server Error",
+                            "code": 500,
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "body": "{\n \"code\": \"<integer>\",\n \"message\": \"<string>\"\n}",
+                            "cookie": [],
+                            "_postman_previewlanguage": "json"
+                        }
+                    ],
+                    "event": []
+                },
+                {
+                    "id": "279b6808-882e-40a3-a616-1ef9eb6571e7",
+                    "name": "Create a item",
+                    "request": {
+                        "name": "Create a item",
+                        "description": {},
+                        "url": {
+                            "path": [
+                                "items"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": []
+                        },
+                        "method": "POST",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "id": "b3f805a5-2b12-4d77-b5d1-55ab4f4b7c3a",
+                            "name": "Null response",
+                            "originalRequest": {
+                                "url": {
+                                    "path": [
+                                        "items"
+                                    ],
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "query": [],
+                                    "variable": []
+                                },
+                                "method": "POST",
+                                "body": {}
+                            },
+                            "status": "Created",
+                            "code": 201,
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "text/plain"
+                                }
+                            ],
+                            "body": "",
+                            "cookie": [],
+                            "_postman_previewlanguage": "text"
+                        },
+                        {
+                            "id": "d52447f1-933d-4b30-a4bf-1d6f3bb63f20",
+                            "name": "unexpected error",
+                            "originalRequest": {
+                                "url": {
+                                    "path": [
+                                        "items"
+                                    ],
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "query": [],
+                                    "variable": []
+                                },
+                                "method": "POST",
+                                "body": {}
+                            },
+                            "status": "Internal Server Error",
+                            "code": 500,
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "body": "{\n \"code\": \"<integer>\",\n \"message\": \"<string>\"\n}",
+                            "cookie": [],
+                            "_postman_previewlanguage": "json"
+                        }
+                    ],
+                    "event": []
+                },
+                {
+                    "id": "3567f08e-d83f-4298-bb5e-29b1deac5caa",
+                    "name": "Info for a specific item",
+                    "request": {
+                        "name": "Info for a specific item",
+                        "description": {},
+                        "url": {
+                            "path": [
+                                "items",
+                                ":itemId"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": [
+                                {
+                                    "description": "(Required) The id of the item to retrieve",
+                                    "type": "any",
+                                    "value": "<string>",
+                                    "key": "itemId"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "id": "fe05f5f8-1430-4d51-91c5-011550fb7339",
+                            "name": "Expected response to a valid request",
+                            "originalRequest": {
+                                "url": {
+                                    "path": [
+                                        "items",
+                                        ":itemId"
+                                    ],
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "query": [],
+                                    "variable": [
+                                        {
+                                            "type": "any",
+                                            "key": "itemId"
+                                        }
+                                    ]
+                                },
+                                "method": "GET",
+                                "body": {}
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "body": "{\n \"id\": \"<long>\",\n \"name\": \"<string>\",\n \"tag\": \"<string>\"\n}",
+                            "cookie": [],
+                            "_postman_previewlanguage": "json"
+                        },
+                        {
+                            "id": "52665ef3-991f-4608-8087-d72e90c4e0f3",
+                            "name": "unexpected error",
+                            "originalRequest": {
+                                "url": {
+                                    "path": [
+                                        "items",
+                                        ":itemId"
+                                    ],
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "query": [],
+                                    "variable": [
+                                        {
+                                            "type": "any",
+                                            "key": "itemId"
+                                        }
+                                    ]
+                                },
+                                "method": "GET",
+                                "body": {}
+                            },
+                            "status": "Internal Server Error",
+                            "code": 500,
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "body": "{\n \"code\": \"<integer>\",\n \"message\": \"<string>\"\n}",
+                            "cookie": [],
+                            "_postman_previewlanguage": "json"
+                        }
+                    ],
+                    "event": []
+                }
+            ],
+            "event": []
+        }
+    ],
+    "event": [],
+    "variable": [
+        {
+            "id": "baseUrl",
+            "type": "string",
+            "value": "http://webapp-example.test/api/v1"
+        }
+    ],
+    "info": {
+        "_postman_id": "212ae716-cb34-4168-ac7f-96cc1c08ea3e",
+        "name": "Webapp Example",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "description": {
+            "content": "",
+            "type": "text/plain"
+        }
+    }
+}
