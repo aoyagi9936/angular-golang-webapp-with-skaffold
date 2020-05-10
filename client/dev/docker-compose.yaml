@@ -31,6 +31,15 @@ services:
     depends_on:
       - base
 
+  # api mock
+  api-mock:
+    image: "stoplight/prism:${PRISM_VER}"
+    ports:
+      - "4010:4010"
+    volumes:
+      - "${PRISM_MOUNT_PATH}:/tmp"
+    command: "mock -h 0.0.0.0 -d /tmp/${PRISM_API_PATH}"
+
   # ng serve
   ng-serve:
     image: "angular9-app"
