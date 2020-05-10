@@ -4,10 +4,6 @@ tags:
   - items
 responses:
   '201':
-    description: Null response
+    $ref: "../responses/NullResponse.yaml"
   default:
-    description: unexpected error
-    content:
-      application/json:
-        schema:
-          $ref: '../schemas/Error.yaml'
+    $ref: "../responses/UnexpectedError.yaml"

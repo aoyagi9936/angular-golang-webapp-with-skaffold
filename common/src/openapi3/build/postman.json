@@ -1,11 +1,11 @@
 {
     "item": [
         {
-            "id": "c8708f0a-3d0e-43bb-82e0-7a77744bdabb",
+            "id": "e331bfac-756d-4843-bbe0-aec0ba7a6ba8",
             "name": "items",
             "item": [
                 {
-                    "id": "18fcb45d-8d90-4678-b041-80571d96e49f",
+                    "id": "600e47fe-c6b5-41bb-a254-cd0e8420e4eb",
                     "name": "List all items",
                     "request": {
                         "name": "List all items",
@@ -33,7 +33,7 @@
                     },
                     "response": [
                         {
-                            "id": "4b04a776-f6d9-48c0-8cae-1cbcb4cd708b",
+                            "id": "aeb88a84-c0e7-421f-a4a6-c5dccd7ab065",
                             "name": "A paged array of items",
                             "originalRequest": {
                                 "url": {
@@ -72,7 +72,7 @@
                             "_postman_previewlanguage": "json"
                         },
                         {
-                            "id": "533b6cc1-0fef-495e-8ffb-20a0c420619b",
+                            "id": "e7ba596d-c590-40ef-b33f-a7eb1f520885",
                             "name": "unexpected error",
                             "originalRequest": {
                                 "url": {
@@ -109,7 +109,7 @@
                     "event": []
                 },
                 {
-                    "id": "279b6808-882e-40a3-a616-1ef9eb6571e7",
+                    "id": "3a51b1c9-450d-477f-8ada-1c1eec9e6eca",
                     "name": "Create a item",
                     "request": {
                         "name": "Create a item",
@@ -131,7 +131,7 @@
                     },
                     "response": [
                         {
-                            "id": "b3f805a5-2b12-4d77-b5d1-55ab4f4b7c3a",
+                            "id": "c011980c-1ea9-4a47-9dc7-5a12e5886a8c",
                             "name": "Null response",
                             "originalRequest": {
                                 "url": {
@@ -160,7 +160,7 @@
                             "_postman_previewlanguage": "text"
                         },
                         {
-                            "id": "d52447f1-933d-4b30-a4bf-1d6f3bb63f20",
+                            "id": "467dba49-ac54-4b85-8b27-9b3e31f1303e",
                             "name": "unexpected error",
                             "originalRequest": {
                                 "url": {
@@ -192,7 +192,7 @@
                     "event": []
                 },
                 {
-                    "id": "3567f08e-d83f-4298-bb5e-29b1deac5caa",
+                    "id": "d55c5d5b-6e06-4754-8fea-1171fd0c696f",
                     "name": "Info for a specific item",
                     "request": {
                         "name": "Info for a specific item",
@@ -222,7 +222,7 @@
                     },
                     "response": [
                         {
-                            "id": "fe05f5f8-1430-4d51-91c5-011550fb7339",
+                            "id": "6e5eeb4b-a2a0-4778-afd3-ba1e263eb877",
                             "name": "Expected response to a valid request",
                             "originalRequest": {
                                 "url": {
@@ -257,7 +257,7 @@
                             "_postman_previewlanguage": "json"
                         },
                         {
-                            "id": "52665ef3-991f-4608-8087-d72e90c4e0f3",
+                            "id": "4a5bc04c-cf81-4c27-a857-6d6cc5753255",
                             "name": "unexpected error",
                             "originalRequest": {
                                 "url": {
@@ -307,7 +307,7 @@
         }
     ],
     "info": {
-        "_postman_id": "212ae716-cb34-4168-ac7f-96cc1c08ea3e",
+        "_postman_id": "74a7d23c-4dd5-44cc-b5e1-b292c4a6e5d5",
         "name": "Webapp Example",
         "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
         "description": {

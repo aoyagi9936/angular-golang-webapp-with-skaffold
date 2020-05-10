@@ -14,13 +14,7 @@ paths:
       tags:
         - items
       parameters:
-        - name: limit
-          in: query
-          description: How many items to return at one time (max 100)
-          required: false
-          schema:
-            type: integer
-            format: int32
+        - $ref: '#/components/parameters/limit'
       responses:
         '200':
           description: A paged array of items
@@ -34,11 +28,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/Items'
         default:
-          description: unexpected error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
+          $ref: '#/components/responses/UnexpectedError'
     post:
       summary: Create a item
       operationId: createItems
@@ -46,13 +36,9 @@ paths:
         - items
       responses:
         '201':
-          description: Null response
+          $ref: '#/components/responses/NullResponse'
         default:
-          description: unexpected error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
+          $ref: '#/components/responses/UnexpectedError'
   '/items/{itemId}':
     get:
       summary: Info for a specific item
@@ -60,12 +46,7 @@ paths:
       tags:
         - items
       parameters:
-        - name: itemId
-          in: path
-          required: true
-          description: The id of the item to retrieve
-          schema:
-            type: string
+        - $ref: '#/components/parameters/itemId'
       responses:
         '200':
           description: Expected response to a valid request
@@ -74,12 +55,24 @@ paths:
               schema:
                 $ref: '#/components/schemas/Item'
         default:
-          description: unexpected error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
+          $ref: '#/components/responses/UnexpectedError'
 components:
+  parameters:
+    itemId:
+      name: itemId
+      in: path
+      required: true
+      description: The id of the item to retrieve
+      schema:
+        type: string
+    limit:
+      name: limit
+      in: query
+      description: How many items to return at one time (max 100)
+      required: false
+      schema:
+        type: integer
+        format: int32
   schemas:
     Item:
       type: object
@@ -109,3 +102,12 @@ components:
           format: int32
         message:
           type: string
+  responses:
+    UnexpectedError:
+      description: unexpected error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    NullResponse:
+      description: Null response

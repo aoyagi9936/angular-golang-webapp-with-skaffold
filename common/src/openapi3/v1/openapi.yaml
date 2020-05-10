@@ -9,5 +9,10 @@ servers:
 paths:
   $ref: "./paths/_index.yaml"
 components:
+  parameters:
+    $ref: "./parameters/_index.yaml"
   schemas:
     $ref: "./schemas/_index.yaml"
+  responses:
+    $ref: "./responses/_index.yaml"
+

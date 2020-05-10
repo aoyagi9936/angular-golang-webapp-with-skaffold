@@ -3,13 +3,7 @@ operationId: listItems
 tags:
   - items
 parameters:
-  - name: limit
-    in: query
-    description: How many items to return at one time (max 100)
-    required: false
-    schema:
-      type: integer
-      format: int32
+  - $ref: "../parameters/query/limit.yaml"
 responses:
   '200':
     description: A paged array of items
@@ -23,8 +17,4 @@ responses:
         schema:
           $ref: '../schemas/Items.yaml'
   default:
-    description: unexpected error
-    content:
-      application/json:
-        schema:
-          $ref: '../schemas/Error.yaml'
+    $ref: "../responses/UnexpectedError.yaml"

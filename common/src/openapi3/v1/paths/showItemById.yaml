@@ -3,22 +3,13 @@ operationId: showItemById
 tags:
   - items
 parameters:
-  - name: itemId
-    in: path
-    required: true
-    description: The id of the item to retrieve
-    schema:
-      type: string
+  - $ref: "../parameters/path/itemId.yaml"
 responses:
   '200':
     description: Expected response to a valid request
     content:
       application/json:
         schema:
-          $ref: '../schemas/Item.yaml'
+          $ref: "../schemas/Item.yaml"
   default:
-    description: unexpected error
-    content:
-      application/json:
-        schema:
-          $ref: '../schemas/Error.yaml'
+    $ref: "../responses/UnexpectedError.yaml"
