@@ -1,5 +1,10 @@
 # angular-golang-webapp-with-skaffold
 
+This is web application boilerplate that consists of Angular and Golang(Gin), build and deploy with Skaffold.  
+This includes also digest authentication with nginx.(id: `webapp-demo` , pass: `webapp-demo` )  
+Backend configured with golang(Gin) is accessed via frontend authentication.  
+Based on OpenAPI v3, prism can be used as mock server for frontend, and newman configured to test for backend.__
+
 ## Setup
 Install Skaffold and Minikube
 
@@ -19,6 +24,7 @@ $ brew install minikube
 homebrew **do not** install latest version.
 
 ## Usage
+
 Start Minikube
 ``` shell
 $ minikube start
@@ -45,11 +51,9 @@ https://github.com/GoogleContainerTools/skaffold/issues/3109
 
 ## OpenAPI (OAS)
 
-Modify `common/src/openapi3/<version>/*` 
-
-This Command generate `openapi.yaml` `postman.json` under the `common/src/openapi3/build/`
-
-Thanks for great sample [dgarcia360/openapi-boilerplate](https://github.com/dgarcia360/openapi-boilerplate)
+Modify `common/src/openapi3/<version>/*`   
+This Command generate `openapi.yaml` `postman.json` under the `common/src/openapi3/build/`   
+Thanks for great sample [dgarcia360/openapi-boilerplate](https://github.com/dgarcia360/openapi-boilerplate)  
 
 ``` shell
 $ cd common/dev
@@ -107,9 +111,9 @@ $ docker-compose up app-init # setup node_modules
 $ docker-compose up ng-serve
 ```
 
-Access to `localhost:4200` with a brawser.
+Access to `localhost:4200` with a brawser.  
+Start mock server [Prism](https://stoplight.io/open-source/prism/) .  
 
-Start mock server [Prism](https://stoplight.io/open-source/prism/) .
 ``` shell
 $ docker-compose up api-mock
 ```
@@ -122,9 +126,9 @@ $ docker-compose up ng-build-test
 Skaffold detect the angular output-path.
 
 ## Development Golang
-Modify files under the `server/src` directory.
 
-Skaffold detect this source path.
+Modify files under the `server/src` directory.  
+Skaffold detect this source path.  
 
 **Testing Api**
 
