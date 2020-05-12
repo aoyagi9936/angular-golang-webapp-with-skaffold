@@ -31,6 +31,7 @@ profiles:
 - name: local
   build:
     local:
+      useBuildkit: true
       push: false
   deploy:
     kubeContext: minikube
