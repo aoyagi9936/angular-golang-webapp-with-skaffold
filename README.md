@@ -16,7 +16,7 @@ $ curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/mini
 $ brew install skaffold
 $ brew install minikube
 ```
-homebrew is *not* install latest version.
+homebrew **do not** install latest version.
 
 ## Usage
 Start Minikube
@@ -122,11 +122,12 @@ $ docker-compose up ng-build
 Skaffold detect the angular output-path.
 
 ## Development Golang
-Modify files under the server/src directory.
+Modify files under the `server/src` directory.
 
 Skaffold detect this source path.
 
 *Testing Api*
+
 If you change `openapi.yaml` , update `common/src/openapi3/build/postman.json`
 ``` shell
 $ cd common/dev
