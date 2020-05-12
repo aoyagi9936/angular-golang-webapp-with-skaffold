@@ -114,10 +114,10 @@ Start mock server [Prism](https://stoplight.io/open-source/prism/) .
 $ docker-compose up api-mock
 ```
 
-Build is below:
+Build for local backend is below:
 
 ``` shell
-$ docker-compose up ng-build
+$ docker-compose up ng-build-test
 ```
 Skaffold detect the angular output-path.
 

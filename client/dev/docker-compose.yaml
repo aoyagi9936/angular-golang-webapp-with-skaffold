@@ -51,8 +51,17 @@ services:
     depends_on:
       - base
 
-  # ng build
-  ng-build:
+  # ng build testing
+  ng-build-test:
+    image: "angular9-app"
+    volumes:
+      - "${ANGULAR_APP_PATH}:/app"
+    command: bash -c "ng build --configuration=testing --output-path dist --deploy-url=./"
+    depends_on:
+      - base
+      
+  # ng build production
+  ng-build-prod:
     image: "angular9-app"
     volumes:
       - "${ANGULAR_APP_PATH}:/app"

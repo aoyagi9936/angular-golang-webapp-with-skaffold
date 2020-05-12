@@ -1,0 +1,12 @@
+/*
+   sticky footer
+   https://css-tricks.com/couple-takes-sticky-footer/
+*/
+.wrapper {
+  min-height: 100%;
+  margin-bottom: -50px;;
+}
+
+.push .footer {
+  height: 50px;
+}

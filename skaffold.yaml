@@ -12,7 +12,7 @@ build:
           BASIC_PASS: webapp-demo
       sync:
         manual:
-          - src: 'src/dist/*'
+          - src: 'src/dist'
             dest: /usr/share/nginx/html
     - image: webapp-api
       context: ./server/

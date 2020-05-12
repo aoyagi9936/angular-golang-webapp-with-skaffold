@@ -1,0 +1,17 @@
+<mat-card class="card-container">
+  <mat-card-header>
+    <div mat-card-avatar class="header-image" [style.background-image]="'url(' + avatar_url + ')'"></div>
+    <mat-card-title>{{title}}</mat-card-title>
+    <mat-card-subtitle>{{subtitle}}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="{{image_url}}" alt="{{alt}}">
+  <mat-card-content>
+    <p>
+      {{content}}
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button>LIKE</button>
+    <button mat-button>SHARE</button>
+  </mat-card-actions>
+</mat-card>
