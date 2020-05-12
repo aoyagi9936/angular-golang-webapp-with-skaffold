@@ -126,7 +126,7 @@ Modify files under the `server/src` directory.
 
 Skaffold detect this source path.
 
-*Testing Api*
+**Testing Api**
 
 If you change `openapi.yaml` , update `common/src/openapi3/build/postman.json`
 ``` shell
