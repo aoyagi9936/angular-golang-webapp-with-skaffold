@@ -54,6 +54,8 @@ func CreateItems(c *gin.Context) {
 
 // ListItems - List all items
 func ListItems(c *gin.Context) {
+    limit, _ := strconv.ParseInt(c.DefaultQuery("limit", "10"), 10, 32)
+    fmt.Printf("limit: %d", limit)
 	c.JSON(http.StatusOK, items)
 }
 
