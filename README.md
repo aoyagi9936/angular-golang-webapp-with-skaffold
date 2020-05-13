@@ -1,7 +1,7 @@
 # angular-golang-webapp-with-skaffold
 
 This is a Web Application boilerplate that consists of Angular and Golang(Gin), build and deploy with Skaffold.  
-This includes also digest authentication with nginx.(id: `webapp-demo` , pass: `webapp-demo` )  
+This includes also Basic authentication with nginx.(id: `webapp-demo` , pass: `webapp-demo` )  
 Backend configured with golang(Gin) is accessed via frontend authentication.  
 Based on OpenAPI v3, prism can be used as mock server for frontend, and newman configured to test for backend.
 
